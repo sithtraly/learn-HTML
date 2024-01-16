@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
+
+@font-face {
+  font-family: 'roboto';
+  src: url(/assets/fonts/Roboto-Medium.ttf);
+}
+
+.material-symbols-outlined {
+  vertical-align: middle;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.login-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 250px;
+  height: auto;
+  background-color: #81ecec;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-family: 'roboto';
+}
+
+input {
+  margin-bottom: 10px;
+  padding: 5px 10px;
+}
+
+button {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.form-with-eye {
+  position: relative;
+  display: flex;
+}
+
+.form-with-eye input {
+  flex-grow: 1;
+}
+
+.form-with-eye .material-symbols-outlined {
+  position: absolute;
+  right: 10px;
+  top: 3px;
+  cursor: pointer;
+}
