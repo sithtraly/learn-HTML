@@ -22,6 +22,10 @@ body {
   margin-top: 0;
 }
 
+.none {
+  display: none;
+}
+
 .login-container {
   width: 100vw;
   height: 100vh;
