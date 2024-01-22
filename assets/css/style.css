@@ -9,9 +9,20 @@
   vertical-align: middle;
 }
 
+:root {
+  --primary: #27ae60;
+  --secondary: #95a5a6;
+  --info: #3498db;
+  --danger: #e74c3c;
+  --warn: #f39c12;
+  --light: #ecf0f1;
+  --dark: #34495e;
+}
+
 body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .text-center {
@@ -72,4 +83,29 @@ button {
   right: 10px;
   top: 3px;
   cursor: pointer;
+  user-select: none;
+}
+
+nav {
+  width: 100vw;
+  height: 48px;
+  background-color: var(--info);
+}
+
+nav a {
+  color: var(--light);
+  padding: 14.5px 10px;
+  display: inline-block;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+nav a:hover {
+  color: var(--dark);
+  background-color: var(--secondary);
+}
+
+nav a.active {
+  background-color: var(--primary);
+  color: var(--dark);
 }
