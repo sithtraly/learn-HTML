@@ -90,6 +90,7 @@ nav {
   width: 100vw;
   height: 48px;
   background-color: var(--info);
+  display: flex;
 }
 
 nav a {
@@ -108,4 +109,27 @@ nav a:hover {
 nav a.active {
   background-color: var(--primary);
   color: var(--dark);
+}
+
+nav {
+  display: flex;
+}
+
+.dropdown-menu {
+  position: relative;
+}
+
+.dropdown-content {
+  position: absolute;
+  flex-direction: column;
+  background-color: aliceblue;
+  display: none;
+}
+
+.dropdown-menu:hover .dropdown-content {
+  display: flex;
+}
+
+.dropdown-item {
+  color: #000000;
 }
