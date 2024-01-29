@@ -133,3 +133,22 @@ nav {
 .dropdown-item {
   color: #000000;
 }
+
+.animal-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.animal-container .animal {
+  width: 400px;
+}
+
+.animal-container .animal img {
+  width: inherit;
+}
+
+.animal-container .animal h3 {
+  text-align: center;
+  margin-top: 5px;
+}
