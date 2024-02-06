@@ -21,14 +21,12 @@ function rand(min, max) {
   return r
 }
 
-function drawText(context, text, x, y, { align = 'start', color = '#ffffff', font = '24px serif' } = {}) {
-  context.fillStyle = color
-  context.textAlign = align
-  context.font = font
-  context.fillText(text, x, y)
-}
-
 document.addEventListener('DOMContentLoaded', () => {
+  const sounds = {
+    jump: new Audio('/assets/sounds/jump.mp3'),
+    die: new Audio('/assets/sounds/die.mp3'),
+    touch: new Audio('/assets/sounds/touch.mp3'),
+  }
   const defaultBarspeed = 2
   const defaultGravity = 5
   const defaultPlayerSpeed = 6
@@ -71,9 +69,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const bars = []
   initBar()
 
+  const drawText = (text, x, y, { align = 'start', color = '#ffffff', font = '24px serif' } = {}) => {
+    ctx.fillStyle = color
+    ctx.textAlign = align
+    ctx.font = font
+    ctx.fillText(text, x, y)
+  }
+
+  const setGameOver = (gameOver = true) => {
+    isGameOver = gameOver
+    if (isGameOver) {
+      sounds.die.play()
+    }
+  }
+
   const onRestart = () => {
     if (isGameOver) {
-      isGameOver = false
+      setGameOver(false)
       player.setX(cw)
       player.setY(ch)
       initBar()
@@ -89,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('keypress', (e) => {
     if (e.key == ' ' || e.keyCode == 'Space') {
-      if ( !isGameOver) {
+      if (!isGameOver) {
         isPause = !isPause
         new Rectangle(ctx, cw, ch, 64, 74, 'black').draw()
         new Rectangle(ctx, cw - 20, ch, 24, 74, 'red').draw()
@@ -110,6 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (isTouchingBar) {
         gravity = gravity * -3
         isJumping = true
+        sounds.jump.play()
       }
     }
   })
@@ -130,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const isMatchX = player.xr > bar.xl && player.xl < bar.xr
           if (isMatchY && isMatchX) {
             if (bar.color == 'red') {
-              isGameOver = true
+              setGameOver(true)
             }
             else {
               touchingBar = bar
@@ -138,6 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
               if (bar.isTouched == false) {
                 scores++
                 bar.isTouched = true
+                sounds.touch.play()
               }
             }
           }
@@ -158,8 +172,8 @@ document.addEventListener('DOMContentLoaded', () => {
           } else if (player.yt > 0) player.changeYby(-speedBar)
           else player.draw()
         } else {
-          if (player.yb >= h || player.yt <= 0) {
-            isGameOver = true
+          if (player.yb >= h || player.yt <= 1) {
+            setGameOver(true)
           } else {
             player.changeYby(gravity)
           }
@@ -172,11 +186,11 @@ document.addEventListener('DOMContentLoaded', () => {
         gravity += 0.001
 
         // draw scores
-        drawText(ctx, `Scores: ${scores}`, 10, 30)
+        drawText(`Scores: ${scores}`, 10, 30)
       } else {
-        drawText(ctx, 'Game Over', cw, ch - 100, { font: '48px serif', color: 'red', align: 'center' })
-        drawText(ctx, 'Your Scores: ' + scores, cw, ch, { font: '32px serif', align: 'center' })
-        drawText(ctx, 'Press `r` to restart', cw, ch + 100, { font: '28px serif', align: 'center' })
+        drawText('Game Over', cw, ch - 100, { font: '48px serif', color: 'red', align: 'center' })
+        drawText('Your Scores: ' + scores, cw, ch, { font: '32px serif', align: 'center' })
+        drawText('Press `r` to restart', cw, ch + 100, { font: '28px serif', align: 'center' })
       }
     }
   }, 1000 / 30)
