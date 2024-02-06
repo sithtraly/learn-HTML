@@ -12,3 +12,10 @@ function togglePassword() {
     eyeOff.classList.add('none')
   }
 }
+
+
+function toggleDropdown() {
+  const el = document.getElementById('dropdown-menu')
+  if (el.classList.contains('show')) el.classList.remove('show')
+  else el.classList.add('show')
+}
