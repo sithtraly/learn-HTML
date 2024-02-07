@@ -51,7 +51,7 @@ function drawSnack() {
     snake.setX(x)
     snake.setY(y)
     snake.draw()
-    snake.setStroke(1, 'green')
+    snake.setStroke(1, 'blue')
     if (i == snakeArray.length - 1) {
       let isLeftIce = true
       for (const eye of snakeEyes) {
