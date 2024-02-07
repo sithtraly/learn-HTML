@@ -19,3 +19,10 @@ function toggleDropdown() {
   if (el.classList.contains('show')) el.classList.remove('show')
   else el.classList.add('show')
 }
+
+
+function showAlert() {
+  const el = document.getElementById('bs-alert')
+  if (el.classList.contains('d-none')) el.classList.remove('d-none')
+  else el.classList.add('d-none')
+}
