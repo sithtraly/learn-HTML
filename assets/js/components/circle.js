@@ -24,4 +24,12 @@ export class Circle {
   changeYby(y) {
     this.y += y
   }
+
+  setX(x) {
+    this.x = x
+  }
+
+  setY(y) {
+    this.y = y
+  }
 }

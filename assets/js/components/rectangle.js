@@ -56,4 +56,10 @@ export class Rectangle {
     this.yb = this.y + this.h / 2
     this.draw()
   }
+
+  setStroke(width = 1, color = 'white') {
+    this.ctx.strokeStyle = color
+    this.ctx.lineWidth = width
+    this.ctx.strokeRect(this._centerX(), this._centerY(), this.w, this.h)
+  }
 }
