@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Rectangle } from './components/rectangle.js'
 import { Circle } from './components/circle.js'
 

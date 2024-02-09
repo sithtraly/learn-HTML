@@ -1,4 +1,11 @@
 export class Circle {
+  /**
+   * @param {CanvasRenderingContext2D} context
+   * @param {number} x
+   * @param {number} y
+   * @param {number} radius
+   * @param {string} color
+   */
   constructor(context, x, y, radius, color = '#ffffff') {
     this.ctx = context
     this.x = x
@@ -17,20 +24,32 @@ export class Circle {
     this.ctx.closePath()
   }
 
+  /**
+   * @param {number} x
+   */
   changeXby(x) {
     this.x += x
     this.xl = this.x - this.radius
     this.xr = this.x + this.radius
   }
 
+  /**
+   * @param {number} y
+   */
   changeYby(y) {
     this.y += y
   }
 
+  /**
+   * @param {number} x
+   */
   setX(x) {
     this.x = x
   }
 
+  /**
+   * @param {number} y
+   */
   setY(y) {
     this.y = y
   }

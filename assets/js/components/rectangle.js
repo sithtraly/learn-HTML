@@ -1,4 +1,12 @@
 export class Rectangle {
+  /**
+   * @param {CanvasRenderingContext2D} context
+   * @param {number} x
+   * @param {number} y
+   * @param {number} w
+   * @param {number} h
+   * @param {string} color
+   */
   constructor(context, x, y, w, h, color = '#ffffff') {
     this.ctx = context
     this.x = x
@@ -31,18 +39,27 @@ export class Rectangle {
     this.yb = this.y + this.h / 2
   }
 
+  /**
+   * @param {number} x
+   */
   setX(x) {
     this.x = x
     this.xl = this.x - this.w / 2
     this.xr = this.x + this.w / 2
   }
 
+  /**
+   * @param {number} y
+   */
   setY(y) {
     this.y = y
     this.yt = this.y - this.h / 2
     this.yb = this.y + this.h / 2
   }
 
+  /**
+   * @param {number} x
+   */
   changeXby(x) {
     this.x += x
     this.xl = this.x - this.w / 2
@@ -50,6 +67,9 @@ export class Rectangle {
     this.draw()
   }
 
+  /**
+   * @param {number} y
+   */
   changeYby(y) {
     this.y += y
     this.yt = this.y - this.h / 2
@@ -57,6 +77,10 @@ export class Rectangle {
     this.draw()
   }
 
+  /**
+   * @param {number} width
+   * @param {string} color
+   */
   setStroke(width = 1, color = 'white') {
     this.ctx.strokeStyle = color
     this.ctx.lineWidth = width
