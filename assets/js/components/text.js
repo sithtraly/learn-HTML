@@ -1,4 +1,9 @@
 export class Text {
+  /**
+   * @param {any} context
+   * @param {number} x
+   * @param {number} y
+   */
   constructor(context, x, y, text='') {
     this.ctx = context
     this.x = x
@@ -30,6 +35,9 @@ export class Text {
     this.ctx.fillText(this.text, this.x, this.y)
     this.ctx.shadowBlur = 0
   }
+  /**
+   * @param {string} text
+   */
   setText(text) {
     this.text = text
     this.draw()
