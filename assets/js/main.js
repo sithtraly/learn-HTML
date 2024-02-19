@@ -23,6 +23,11 @@ function toggleDropdown() {
 
 function showAlert() {
   const el = document.getElementById('bs-alert')
-  if (el.classList.contains('d-none')) el.classList.remove('d-none')
+  if (el.classList.contains('d-none')) {
+    el.classList.remove('d-none')
+    setTimeout(() => {
+      el.classList.add('d-none')
+    }, 3000)
+  }
   else el.classList.add('d-none')
 }
