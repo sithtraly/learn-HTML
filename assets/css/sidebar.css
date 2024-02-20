@@ -1,0 +1,19 @@
+.sidebar {
+  width: 200px;
+  height: calc(100vh - 54px);
+  background: rgb(250, 255, 241);
+  box-shadow: 0 0 5px  #000000;
+  /* padding: 10px; */
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar a {
+  text-decoration: none;
+  width: 100%;
+  padding: 10px;
+}
+
+.sidebar a:hover {
+  background: hsl(120, 100%, 87%);
+}
