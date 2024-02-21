@@ -31,3 +31,13 @@ function showAlert() {
   }
   else el.classList.add('d-none')
 }
+
+
+function toggleSidebar() {
+  const sidebar = document.getElementById('sidebar')
+  if (sidebar.classList.contains('hide')) {
+    sidebar.classList.remove('hide')
+  } else {
+    sidebar.classList.add('hide')
+  }
+}

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home using bootstrap</title>
-  <!-- <link rel="stylesheet" href="/assets/css/style.css"> -->
+  <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/css/sidebar.css">
   <style>
@@ -21,9 +21,10 @@
 <body>
   <nav class="navbar navbar-primary bg-primary">
     <div class="container-fluid justify-content-start">
+      <button class="btn" onclick="toggleSidebar()">
+        <span class="material-symbols-outlined text-white">menu</span>
+      </button>
       <a href="#" class="text-light btn">Home</a>
-
-
 
       <div class="dropdown">
         <button class="btn btn-primay text-white dropdown-toggle" type="button" 
@@ -36,16 +37,14 @@
           <li><a class="dropdown-item" href="#">Something else here</a></li>
         </ul>
       </div>
-
-
-
+      
       <a href="#" class="text-light btn">Order</a>
       <a href="#" class="text-light btn">Cart</a>
       <a href="#" class="text-light btn">Feedback</a>
     </div>
   </nav>
 
-  <aside class="sidebar">
+  <aside class="sidebar" id="sidebar">
     <a href="#">Home</a>
     <a href="#">Orders</a>
     <a href="#">Settings</a>

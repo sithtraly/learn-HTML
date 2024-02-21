@@ -6,6 +6,8 @@
   /* padding: 10px; */
   display: flex;
   flex-direction: column;
+  transition: 1000ms;
+  overflow-x: hidden;
 }
 
 .sidebar a {
@@ -16,4 +18,8 @@
 
 .sidebar a:hover {
   background: hsl(120, 100%, 87%);
+}
+
+.sidebar.hide {
+  width: 0;
 }
