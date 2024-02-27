@@ -1,7 +1,7 @@
 .sidebar {
   width: 200px;
-  height: calc(100vh - 54px);
-  background: rgb(250, 255, 241);
+  height: calc(100vh - 48px);
+  background: rgb(204, 231, 154);
   box-shadow: 0 0 5px  #000000;
   /* padding: 10px; */
   display: flex;
@@ -17,7 +17,7 @@
 }
 
 .sidebar a:hover {
-  background: hsl(120, 100%, 87%);
+  background: rgb(189, 255, 189);
 }
 
 .sidebar.hide {
