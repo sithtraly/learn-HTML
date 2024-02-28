@@ -152,3 +152,9 @@ nav {
   text-align: center;
   margin-top: 5px;
 }
+
+.btn-bottom-right {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+}
