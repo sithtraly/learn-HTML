@@ -158,3 +158,22 @@ nav {
   right: 10px;
   bottom: 10px;
 }
+
+.dialog-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(3px);
+}
+
+.dialog-backdrop > .dialog-content {
+  width: 400px;
+  height: 400px;
+  background-color: red;
+  border-radius: 5px;
+}
