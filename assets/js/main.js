@@ -41,3 +41,12 @@ function toggleSidebar() {
     sidebar.classList.add('hide')
   }
 }
+
+function toggleDialog() {
+  const dialog = document.getElementById('dialog')
+  if (dialog.classList.contains('d-none')) {
+    dialog.classList.remove('d-none')
+  } else {
+    dialog.classList.add('d-none')
+  }
+}

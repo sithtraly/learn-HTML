@@ -168,12 +168,24 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(3px);
+  /* backdrop-filter: blur(3px); */
 }
 
-.dialog-backdrop > .dialog-content {
+.dialog-backdrop::before {
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #95a5a6;
+  opacity: 0.8;
+  position: fixed;
+  z-index: -1;
+}
+
+.dialog-backdrop>.dialog-content {
   width: 400px;
   height: 400px;
   background-color: red;
-  border-radius: 5px;
+  border-radius: 8px;
 }
