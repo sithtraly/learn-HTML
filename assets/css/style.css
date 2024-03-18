@@ -186,6 +186,13 @@ nav {
 .dialog-backdrop>.dialog-content {
   width: 400px;
   height: 400px;
-  background-color: red;
+  background-color: white;
   border-radius: 8px;
+  position: relative;
+}
+
+.dialog-backdrop>.dialog-content>.btn {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
