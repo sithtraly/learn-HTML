@@ -27,8 +27,7 @@
       <a href="#" class="text-light btn">Home</a>
 
       <div class="dropdown">
-        <button class="btn btn-primay text-white dropdown-toggle" type="button" 
-        id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" onclick="toggleDropdown()">
+        <button class="btn btn-primay text-white dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" onclick="toggleDropdown()">
           Categories
         </button>
         <ul class="dropdown-menu" id="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -37,7 +36,7 @@
           <li><a class="dropdown-item" href="#">Something else here</a></li>
         </ul>
       </div>
-      
+
       <a href="#" class="text-light btn">Order</a>
       <a href="#" class="text-light btn">Cart</a>
       <a href="#" class="text-light btn">Feedback</a>
@@ -51,7 +50,7 @@
       <a href="#">Orders</a>
       <a href="/pages/settings.html">Settings</a>
     </aside>
-  
+
     <div>
       <h1>Users</h1>
       <button class="btn btn-primary btn-bottom-right" onclick="toggleDialog()">+</button>
@@ -59,13 +58,42 @@
   </div>
 
   <div class="dialog-backdrop d-none" id="dialog">
-    <div class="dialog-content">
+    <div class="dialog-content p-4">
       <button class="btn" onclick="toggleDialog()">
         <span class="material-symbols-outlined">close</span>
       </button>
+
+      <h2 class="text-center">Create New User</h2>
+      <div class="form-group mt-2">
+        <label for="name">Name</label><br>
+        <input type="text" id="name" name="name" class="w-100 form-control" />
+      </div>
+
+      <div class="form-group mt-2">
+        <label for="name">Gender</label><br>
+        <select name="gender" id="gender" class="form-select">
+          <option value="Male" selected>Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+
+      <div class="form-group mt-2">
+        <label for="dob">Date of Birth</label><br>
+        <input type="date" id="dob" name="dob" class="w-100 form-control" />
+      </div>
+
+      <div class="form-group mt-2">
+        <label for="email">Email</label><br>
+        <input type="email" id="email" name="email" class="w-100 form-control" />
+      </div>
+
+
+      <div class="mt-2 d-flex justify-content-end">
+        <button class="btn btn-secondary me-2" onclick="toggleDialog()">Cancel</button>
+        <button class="btn btn-primary">Save</button>
+      </div>
     </div>
   </div>
-  
 
   <script src="/assets/js/bootstrap.min.js"></script>
   <script src="/assets/js/bootstrap.bundle.min.js"></script>
