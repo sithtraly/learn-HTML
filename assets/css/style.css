@@ -196,3 +196,17 @@ nav {
   top: 0;
   right: 0;
 }
+
+table {
+  width: 100%;
+}
+
+table tr th {
+  text-align: center;
+}
+
+table tr th,
+table tr td {
+  border-collapse: collapse;
+  border: 1px solid black;
+}

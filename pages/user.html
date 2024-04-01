@@ -51,9 +51,17 @@
       <a href="/pages/settings.html">Settings</a>
     </aside>
 
-    <div>
+    <div class="d-block p-2" style="flex-grow: 1;">
       <h1>Users</h1>
       <button class="btn btn-primary btn-bottom-right" onclick="toggleDialog()">+</button>
+      <table border class="table-border" id="user-table">
+        <tr>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Date of Brith</th>
+          <th>Email</th>
+        </tr>
+      </table>
     </div>
   </div>
 
@@ -90,7 +98,7 @@
 
       <div class="mt-2 d-flex justify-content-end">
         <button class="btn btn-secondary me-2" onclick="toggleDialog()">Cancel</button>
-        <button class="btn btn-primary">Save</button>
+        <button class="btn btn-primary" onclick="onSaveUser()">Save</button>
       </div>
     </div>
   </div>

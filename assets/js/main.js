@@ -50,3 +50,32 @@ function toggleDialog() {
     dialog.classList.add('d-none')
   }
 }
+
+const userData = []
+
+function onSaveUser() {
+  const userTable = document.getElementById('user-table')
+  const name = document.getElementById('name')
+  const gender = document.getElementById('gender')
+  const dob = document.getElementById('dob')
+  const email = document.getElementById('email')
+
+  const row = "<tr>\
+  <td>"+ name.value + "</td>\
+  <td>"+ gender.value + "</td>\
+  <td>"+ dob.value + "</td>\
+  <td>"+ email.value + "</td>\
+  </tr>"
+  userTable.innerHTML += row
+  toggleDialog()
+
+  const obj = {
+    name: name.value,
+    gender: gender.value,
+    dob: dob.value,
+    email: email.value
+  }
+  userData.push(obj)
+  const str = JSON.stringify(userData)
+  localStorage.setItem('userData', str)
+}
