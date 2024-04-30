@@ -53,20 +53,27 @@ function toggleDialog() {
 
 const userData = []
 
+const userTable = document.getElementById('user-table')
+
+function addData2Table(name, gender, dob, email) {
+  const row = "<tr>\
+  <td>"+ name + "</td>\
+  <td>"+ gender + "</td>\
+  <td>"+ dob + "</td>\
+  <td>"+ email + "</td>\
+  <td>\
+    <span class=\"material-symbols-outlined\">edit</span>\
+    <span class=\"material-symbols-outlined text-danger\">delete</span>\
+  </td>\</tr>"
+  userTable.innerHTML += row
+}
+
 function onSaveUser() {
-  const userTable = document.getElementById('user-table')
   const name = document.getElementById('name')
   const gender = document.getElementById('gender')
   const dob = document.getElementById('dob')
   const email = document.getElementById('email')
-
-  const row = "<tr>\
-  <td>"+ name.value + "</td>\
-  <td>"+ gender.value + "</td>\
-  <td>"+ dob.value + "</td>\
-  <td>"+ email.value + "</td>\
-  </tr>"
-  userTable.innerHTML += row
+  addData2Table(name.value, gender.value, dob.value, email.value)
   toggleDialog()
 
   const obj = {
@@ -79,3 +86,13 @@ function onSaveUser() {
   const str = JSON.stringify(userData)
   localStorage.setItem('userData', str)
 }
+
+function loadData() {
+  const users = JSON.parse(localStorage.getItem('userData'))
+  for (const user of users) {
+    userData.push(user)
+    addData2Table(user.name, user.gender, user.dob, user.email)
+  }
+}
+
+loadData()
