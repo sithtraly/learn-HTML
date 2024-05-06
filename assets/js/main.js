@@ -55,6 +55,21 @@ const userData = []
 
 const userTable = document.getElementById('user-table')
 
+function onEditClick(name) {
+  const id = userData.findIndex((user) => user.name === name)
+  const user = userData[id]
+  toggleDialog()
+  const names = document.getElementById('name')
+  const gender = document.getElementById('gender')
+  const dob = document.getElementById('dob')
+  const email = document.getElementById('email')
+
+  names.value = user.name
+  gender.value = user.gender
+  dob.value = user.dob
+  email.value = user.email
+}
+
 function addData2Table(name, gender, dob, email) {
   const row = "<tr>\
   <td>"+ name + "</td>\
@@ -62,8 +77,9 @@ function addData2Table(name, gender, dob, email) {
   <td>"+ dob + "</td>\
   <td>"+ email + "</td>\
   <td>\
-    <span class=\"material-symbols-outlined\">edit</span>\
-    <span class=\"material-symbols-outlined text-danger\">delete</span>\
+    <span class=\"material-symbols-outlined pointer\"\
+    onclick=\"onEditClick('" + name + "')\">edit</span>\
+    <span class=\"material-symbols-outlined text-danger pointer\">delete</span>\
   </td>\</tr>"
   userTable.innerHTML += row
 }

@@ -210,3 +210,7 @@ table tr td {
   border-collapse: collapse;
   border: 1px solid black;
 }
+
+.pointer {
+  cursor: pointer;
+}
